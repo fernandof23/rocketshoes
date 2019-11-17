@@ -12,14 +12,14 @@ import * as cartActions from '../../store/modules/cart/actions'
 
 import { Container, ProductTable, Total } from './styles';
 
-function Cart({ cart, removeFromCart, updateFromCart, total }) {
+function Cart({ cart, removeFromCart, updateFromCartRequest, total }) {
     function handleDecrement(product) {
-        updateFromCart(product.id, product.amount - 1)
+        updateFromCartRequest(product.id, product.amount - 1)
 
     }
 
     function handleIncrement(product) {
-        updateFromCart(product.id, product.amount + 1)
+        updateFromCartRequest(product.id, product.amount + 1)
 
     }
 
@@ -37,7 +37,7 @@ function Cart({ cart, removeFromCart, updateFromCart, total }) {
                 </thead>
                 <tbody>
                     {cart.map(product => (
-                        <tr>
+                        <tr key={product.id}>
                             <td>
                                 <img
                                     src={product.image}
