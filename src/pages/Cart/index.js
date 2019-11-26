@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import { formatPrice } from '../../util/format'
 import {
     MdRemoveCircleOutline,
